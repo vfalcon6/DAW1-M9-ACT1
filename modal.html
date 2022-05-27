@@ -10,39 +10,39 @@
 <body>
     <div class="header" id="myHeader">
         <h1>Galeria Modal</h1>
-        <p>Set d'imatges tretes a diferents àrees de Barcelona</p>
+        <p>Set d'imatges tretes a diferents àrees de Barcelona, Catalunya i Ourense, Galicia</p>
         <button class="btn" onclick="one()">1</button>
         <button class="btn active" onclick="two()">2</button>
         <button class="btn" onclick="four()">4</button>
     </div>
     <div class="row">
         <div class="column">
-            <img src="img/a.jpg" style="width:100%">
-            <img src="img/b.jpg" style="width:100%">
-            <img src="img/c.jpg" style="width:100%">
-            <img src="img/d.jpg" style="width:100%">
-            <img src="img/e.jpg" style="width:100%">
+            <img src="img/a.jpg" style="width:100%" id="pic">
+            <img src="img/b.jpg" style="width:100%" id="pic">
+            <img src="img/c.jpg" style="width:100%" id="pic">
+            <img src="img/d.jpg" style="width:100%" id="pic">
+            <img src="img/e.jpg" style="width:100%" id="pic">
         </div>
         <div class="column">
-            <img src="img/f.jpg" style="width:100%">
-            <img src="img/g.jpg" style="width:100%">
-            <img src="img/h.jpg" style="width:100%">
-            <img src="img/i.jpg" style="width:100%">
-            <img src="img/j.jpg" style="width:100%">
+            <img src="img/f.jpg" style="width:100%" id="pic">
+            <img src="img/g.jpg" style="width:100%" id="pic">
+            <img src="img/h.jpg" style="width:100%" id="pic">
+            <img src="img/i.jpg" style="width:100%" id="pic">
+            <img src="img/j.jpg" style="width:100%" id="pic">
         </div>
         <div class="column">
-            <img src="img/a.jpg" style="width:100%">
-            <img src="img/b.jpg" style="width:100%">
-            <img src="img/c.jpg" style="width:100%">
-            <img src="img/d.jpg" style="width:100%">
-            <img src="img/e.jpg" style="width:100%">
+            <img src="img/k.jpg" style="width:100%" id="pic">
+            <img src="img/l.jpg" style="width:100%" id="pic">
+            <img src="img/m.jpg" style="width:100%" id="pic">
+            <img src="img/n.jpg" style="width:100%" id="pic">
+            <img src="img/o.jpg" style="width:100%" id="pic">
         </div>
         <div class="column">
-            <img src="img/f.jpg" style="width:100%">
-            <img src="img/g.jpg" style="width:100%">
-            <img src="img/h.jpg" style="width:100%">
-            <img src="img/i.jpg" style="width:100%">
-            <img src="img/j.jpg" style="width:100%">
+            <img src="img/p.jpg" style="width:100%" id="pic">
+            <img src="img/q.jpg" style="width:100%" id="pic">
+            <img src="img/r.jpg" style="width:100%" id="pic">
+            <img src="img/s.jpg" style="width:100%" id="pic">
+            <img src="img/t.jpg" style="width:100%" id="pic">
         </div>
     </div>
     <script>
@@ -83,5 +83,32 @@
             });
         }
     </script>
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img">
+        <div id="caption"></div>
+      </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("pic");
+        var modalImg = document.getElementById("img");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        }
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+        </script>
 </body>
 </html>
